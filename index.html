@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Aayush Santosh: Penn State Economics student working across finance, real estate development and SAP enterprise systems.">
+<meta property="og:title" content="Aayush Santosh">
+<meta property="og:description" content="Economics at Penn State. Finance, real estate development and SAP.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Aayush Santosh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style id="site-css">
+/* Layout: two-column ledger. A quiet sticky index on the left, the record on the right; mono figures like a term sheet. */
+:root{
+  --bg:#F6F7F9; --surface:#FFFFFF; --fg:#141821; --muted:#5D6573; --line:#DCE0E7;
+  --accent:#1B2F57; --accent-soft:#E4E9F3; --danger:#A23B2C;
+  --display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1118; --surface:#141A24; --fg:#E5E9F0; --muted:#96A0B0; --line:#242C3A;
+  --accent:#9DB8EC; --accent-soft:#1A2740; --danger:#E58A7B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1118; --surface:#141A24; --fg:#E5E9F0; --muted:#96A0B0; --line:#242C3A;
+  --accent:#9DB8EC; --accent-soft:#1A2740; --danger:#E58A7B; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px;transition:color .15s,text-decoration-color .15s}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:1120px;margin:0 auto;padding-block:72px 96px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:grid;grid-template-columns:260px minmax(0,1fr);gap:72px}
+@media (min-width:700px){.wrap{padding-left:max(40px, env(safe-area-inset-left, 0px));padding-right:max(40px, env(safe-area-inset-right, 0px))}}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:48px;padding-block:40px 72px}}
+
+/* Sidebar */
+.side{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 72px);align-self:start;display:flex;flex-direction:column;gap:32px}
+@media (max-width:900px){.side{position:static}}
+.mark{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.name{font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,60px);line-height:.95;letter-spacing:-.01em;margin:10px 0 0}
+.name em{font-style:italic;color:var(--accent)}
+.role{color:var(--muted);margin:14px 0 0;font-size:15px;max-width:30ch}
+.index{display:flex;flex-direction:column;gap:2px;font-size:14px}
+.index a{text-decoration:none;color:var(--muted);padding:5px 0;display:flex;gap:12px;align-items:baseline}
+.index a span{font-family:var(--mono);font-size:11px;color:var(--line);width:18px;transition:color .15s}
+.index a:hover, .index a.on{color:var(--fg)}
+.index a.on span{color:var(--accent)}
+@media (max-width:900px){.index{flex-direction:row;flex-wrap:wrap;gap:4px 18px}.index a span{display:none}}
+.links{display:flex;flex-direction:column;gap:8px;font-size:14px}
+.links a{display:inline-flex;gap:8px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+
+/* Main */
+main{min-width:0;display:flex;flex-direction:column;gap:88px}
+section{scroll-margin-top:32px}
+.lede{font-family:var(--display);font-size:clamp(28px,3.6vw,40px);line-height:1.18;letter-spacing:-.005em;margin:0;max-width:24ch;text-wrap:balance;font-weight:400}
+.lede em{color:var(--accent)}
+.intro p{color:var(--muted);max-width:62ch;margin:22px 0 0}
+.figures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:40px}
+.figures div{padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:4px}
+.figures div + div{padding-left:20px;border-left:1px solid var(--line)}
+.figures b{font-family:var(--mono);font-weight:500;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.figures span{font-size:13px;color:var(--muted);line-height:1.4}
+@media (max-width:560px){.figures{grid-template-columns:minmax(0,1fr)}.figures div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+h2{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0;display:flex;gap:14px;align-items:baseline}
+h2 span{color:var(--accent)}
+h3{font-size:18px;font-weight:600;margin:0;line-height:1.35;letter-spacing:-.005em}
+
+/* Rows (experience, leadership) */
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:620px){.row{grid-template-columns:minmax(0,1fr);gap:8px}}
+.when{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px;line-height:1.5}
+.where{color:var(--muted);font-size:14.5px;margin-top:2px}
+.row ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;max-width:66ch}
+.row li{position:relative;padding-left:18px;font-size:15px;color:var(--fg)}
+.row li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--muted)}
+.hl{font-family:var(--mono);font-size:13.5px;background:var(--accent-soft);color:var(--accent);padding:1px 6px;border-radius:3px;white-space:nowrap}
+
+/* Projects */
+.btn{font:inherit;font-size:14px;font-weight:500;border:1px solid var(--fg);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:999px;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--fg);opacity:1}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:var(--surface)}
+.btn:disabled{opacity:.5;cursor:default}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:720px){.projects{grid-template-columns:minmax(0,1fr)}}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:color-mix(in srgb, var(--accent) 45%, var(--line))}
+.proj .meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.proj p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.tag{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:3px;border:1px solid var(--line);color:var(--muted)}
+.proj .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.proj .go{font-size:14px;font-weight:500;color:var(--accent);text-decoration:none;overflow-wrap:anywhere}
+.proj .go:hover{text-decoration:underline}
+.owner-tools{display:flex;gap:6px}
+.mini{font:inherit;font-size:12.5px;background:none;border:0;color:var(--muted);cursor:pointer;padding:2px 4px;text-decoration:underline;text-underline-offset:3px}
+.mini:hover{color:var(--fg)}
+.mini.del:hover{color:var(--danger)}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--danger)}
+.empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:6px;padding:32px;color:var(--muted);text-align:center}
+
+form.editor{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;margin-bottom:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:620px){form.editor{grid-template-columns:minmax(0,1fr)}}
+form.editor .full{grid-column:1/-1}
+form.editor label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500;color:var(--muted)}
+form.editor input, form.editor textarea{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:9px 11px;width:100%}
+form.editor textarea{min-height:96px;resize:vertical}
+form.editor input:focus, form.editor textarea:focus{outline:none;border-color:var(--accent)}
+form.editor .actions{display:flex;gap:10px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.msg{font-size:13px;color:var(--muted);margin-right:auto}
+.msg.err{color:var(--danger)}
+
+/* Certifications */
+.certs{display:flex;flex-direction:column}
+.cert{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
+.cert:last-child{border-bottom:1px solid var(--line)}
+.cert .iss{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.cert .t{font-weight:500;font-size:15.5px}
+.cert .s{font-size:13.5px;color:var(--muted);margin-top:2px}
+.cert .d{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cert .d a{display:block;color:var(--accent);text-decoration:none;margin-top:2px}
+.cert .d a:hover{text-decoration:underline}
+.cert.pending .t{color:var(--muted)}
+.pill{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:1px 8px;margin-left:8px;vertical-align:2px}
+@media (max-width:620px){.cert{grid-template-columns:minmax(0,1fr);gap:4px}.cert .d{text-align:left}.cert .d a{display:inline;margin-left:10px}}
+
+/* Skills / awards */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 48px}
+@media (max-width:720px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.kv h4{font-family:var(--mono);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 10px}
+.kv p{margin:0;font-size:15px;max-width:60ch}
+.awards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.awards li{display:flex;gap:14px;align-items:baseline;font-size:15px}
+.awards li b{font-family:var(--mono);font-weight:500;font-size:12px;color:var(--accent);min-width:64px}
+
+.contact .lede{max-width:20ch}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center}
+.copy-email{font-family:var(--mono);font-size:14px;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);user-select:all;overflow-wrap:anywhere}
+footer{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.04em;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+
+</head>
+<body>
+<div id="site" class="wrap">
+  <aside class="side">
+    <div>
+      <div class="mark">Penn State · Economics '27</div>
+      <h1 class="name">Aayush<br><em>Santosh</em></h1>
+      <p class="role">Economics student working across finance, real estate development and SAP enterprise systems.</p>
+    </div>
+    <nav class="index" aria-label="Sections">
+      <a href="#about"><span>01</span>About</a>
+      <a href="#experience"><span>02</span>Experience</a>
+      <a href="#projects"><span>03</span>Projects</a>
+      <a href="#leadership"><span>04</span>Leadership</a>
+      <a href="#certifications"><span>05</span>Certifications</a>
+      <a href="#skills"><span>06</span>Skills &amp; awards</a>
+      <a href="#contact"><span>07</span>Contact</a>
+    </nav>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/aayushsant" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://elevate-mindset.replit.app" target="_blank" rel="noopener">Elevate ↗</a>
+      <span class="status"><i></i>Graduating May 2027</span>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about" class="intro">
+      <p class="lede">I study how capital gets <em>allocated</em> — and I like being in the room where the numbers turn into decisions.</p>
+      <p>I'm a B.S. Economics student at The Pennsylvania State University with a minor in Entrepreneurship &amp; Innovation, graduating May 2027. I've built feasibility models for affordable housing, reconciled budgets for a corporate finance team in Dubai, and run diligence on early-stage deals as an associate and treasurer at Happy Valley Venture Capital. Lately I've been building fluency in SAP S/4HANA and global markets.</p>
+      <div class="figures">
+        <div><b>~$4.5M</b><span>County funding secured for the 600 Centennial project</span></div>
+        <div><b>Top 10/50</b><span>Harvard Wolves of Wall Street Competition</span></div>
+        <div><b>5</b><span>Certifications earned in 2026, with 2 more in progress</span></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="head"><h2><span>02</span>Experience</h2></div>
+      <div class="rows">
+        <article class="row">
+          <div class="when">May – Aug 2025</div>
+          <div>
+            <h3>Real Estate Development Intern</h3>
+            <div class="where">The Michaels Organization · Camden, NJ</div>
+            <ul>
+              <li>Built Operis feasibility models for multiple affordable housing developments, stress-testing rent, cost and debt assumptions behind underwriting decisions.</li>
+              <li>Prepared and reviewed LIHTC UNIAP, PILOT, HOME, mortgage commitment and DOI applications for the 600 Centennial project, which secured <span class="hl">~$4.5M</span> in Camden County funding.</li>
+              <li>Managed vendor invoicing in RealPage, reconciling invoices against the project budget through construction draws.</li>
+              <li>Presented feasibility findings to senior leadership and coordinated with Camden city officials on entitlement and funding requirements.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="when">Sep 2024 – Present</div>
+          <div>
+            <h3>Facility Attendant</h3>
+            <div class="where">Penn State Student Services · University Park, PA</div>
+            <ul>
+              <li>Control building access and equipment checkout, enforcing the safety protocols that keep the facility compliant.</li>
+              <li>First point of contact through peak-hour traffic, resolving patron issues and escalating only what needs professional staff.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="when">Aug – Sep 2022</div>
+          <div>
+            <h3>Finance Intern</h3>
+            <div class="where">Voltas Limited · Dubai, UAE</div>
+            <ul>
+              <li>Prepared and analyzed financial statements for the UAE business unit, tying reported figures back to ledger detail.</li>
+              <li>Built and maintained the team's budget workbooks, tracking actual spend against plan and flagging variances.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="when">Aug – Sep 2021</div>
+          <div>
+            <h3>E-commerce Intern</h3>
+            <div class="where">Network International · Dubai, UAE</div>
+            <ul>
+              <li>Onboarded merchants onto the payment gateway, configuring accounts and troubleshooting integrations until each could process live transactions.</li>
+              <li>Designed and launched a real-time customer feedback system that gave the team a standing signal on gateway pain points.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="head">
+        <h2><span>03</span>Projects</h2>
+      </div>
+      <div id="editor-slot"></div>
+      <div class="projects" id="project-list"></div>
+    </section>
+
+    <section id="leadership">
+      <div class="head"><h2><span>04</span>Leadership</h2></div>
+      <div class="rows">
+        <article class="row">
+          <div class="when">Nov 2024 – Present</div>
+          <div>
+            <h3>Treasurer &amp; Associate</h3>
+            <div class="where">Happy Valley Venture Capital · University Park, PA</div>
+            <ul>
+              <li>Treasurer since Jan 2025: manage transactions, accounts and budgets with Penn State ASA; records pass university compliance review.</li>
+              <li>Run market research, financial analysis and due diligence on prospective investments, co-authoring the memos used to advance deals.</li>
+              <li>Monitor portfolio performance and build founder and industry relationships to source deal flow.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="when">Sep 2023 – Present</div>
+          <div>
+            <h3>Executive Board · Treasurer (Gamma)</h3>
+            <div class="where">Zeta Psi · University Park, PA</div>
+            <ul>
+              <li>Lead chapter finances since Jan 2026: budgeting, dues and rent collection, reimbursements and cash-flow planning, keeping the chapter solvent and compliant.</li>
+              <li>As Philanthropy Chair (2023–2026), planned charitable events and fundraisers and partnered with OneLove on volunteer programming.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="head"><h2><span>05</span>Certifications</h2></div>
+      <div class="certs">
+        <div class="cert">
+          <div class="iss">SAP</div>
+          <div><div class="t">Introducing RISE with SAP Methodology</div><div class="s">Cloud strategy, SAP Activate, RISE and GROW with SAP</div></div>
+          <div class="d">Nov 9, 2026<a href="https://badger.learning.sap.com/verify/xokim-tuhuh-kasus-vuraf-hakud" target="_blank" rel="noopener">Verify ↗</a></div>
+        </div>
+        <div class="cert">
+          <div class="iss">SAP</div>
+          <div><div class="t">Exploring SAP Cloud ERP</div><div class="s">Deployment options, SAP Clean Core, integration and extensibility</div></div>
+          <div class="d">Nov 2, 2026<a href="https://badger.learning.sap.com/verify/xidyb-dysyc-bisav-gacur-hedop" target="_blank" rel="noopener">Verify ↗</a></div>
+        </div>
+        <div class="cert">
+          <div class="iss">SAP</div>
+          <div><div class="t">Outlining Processes in Record to Report</div><div class="s">Universal Journal, General Ledger accounting, financial reporting</div></div>
+          <div class="d">Sep 9, 2026<a href="https://badger.learning.sap.com/verify/xehol-facup-tykuc-kiram-dyguv" target="_blank" rel="noopener">Verify ↗</a></div>
+        </div>
+        <div class="cert">
+          <div class="iss">SAP</div>
+          <div><div class="t">Discovering SAP S/4HANA Service</div><div class="s">Service management and fulfillment in S/4HANA Cloud</div></div>
+          <div class="d">Sep 9, 2026<a href="https://badger.learning.sap.com/verify/xicas-rehif-nykid-begav-davol" target="_blank" rel="noopener">Verify ↗</a></div>
+        </div>
+        <div class="cert">
+          <div class="iss">Bank of America</div>
+          <div><div class="t">Global Markets Sales &amp; Trading Analyst Job Simulation</div><div class="s">Via Forage · market insight, live market dynamics, client product recommendations, automation</div></div>
+          <div class="d">Aug 24, 2026</div>
+        </div>
+        <div class="cert pending">
+          <div class="iss">SAP</div>
+          <div><div class="t">S/4HANA Private Cloud, Certified<span class="pill">In progress</span></div></div>
+          <div class="d">Exp. Nov 2026</div>
+        </div>
+        <div class="cert pending">
+          <div class="iss">Wall Street Prep</div>
+          <div><div class="t">Financial Modeling &amp; Valuation<span class="pill">In progress</span></div></div>
+          <div class="d">Exp. Dec 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="head"><h2><span>06</span>Skills &amp; awards</h2></div>
+      <div class="grid2">
+        <div class="kv"><h4>Technical</h4><p>R, STATA, Excel (financial modeling), Operis, RealPage, SAP S/4HANA, Claude Code, MS Office</p></div>
+        <div class="kv"><h4>Markets</h4><p>Equities, fixed income, FX, derivatives and structured products. Market commentary, trade idea generation, client product recommendation.</p></div>
+        <div class="kv"><h4>Analytical &amp; business</h4><p>Feasibility analysis, underwriting support, regression analysis, budget and variance analysis, market research, due diligence, process automation, vendor management.</p></div>
+        <div class="kv"><h4>Languages</h4><p>English, Hindi, Konkani, Marathi, all fluent</p></div>
+        <div class="kv"><h4>Awards</h4>
+          <ul class="awards">
+            <li><b>Top 10</b>Harvard Wolves of Wall Street Competition (of 50)</li>
+            <li><b>Honors</b>Dean's List, Penn State</li>
+            <li><b>Bronze</b>Duke of Edinburgh's Award</li>
+            <li><b>1S · 2B</b>KenKen Math: one silver, two bronze</li>
+          </ul>
+        </div>
+        <div class="kv"><h4>Off the clock</h4><p>Tennis (US Open, Jannik Sinner), soccer (Real Madrid, Champions League), working toward all 50 U.S. states, and philosophy from the Bhagavad Gita to Sun Tzu.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="head"><h2><span>07</span>Contact</h2></div>
+      <p class="lede">Recruiting for finance, markets or SAP roles? Let's talk.</p>
+      <div class="contact-row">
+        <span class="copy-email" id="email">aayushsantosh06@gmail.com</span>
+        <button type="button" class="btn ghost" id="copy-btn">Copy email</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/aayushsant" target="_blank" rel="noopener" style="text-decoration:none">LinkedIn ↗</a>
+      </div>
+    </section>
+
+    <footer><span>Aayush Santosh · University Park, PA</span><span>Updated Nov 2026</span></footer>
+  </main>
+</div>
+
+<script src="projects.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
